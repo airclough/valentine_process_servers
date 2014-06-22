@@ -7,7 +7,7 @@
 
 html {
   color: #333;
-  font-family: "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1em;
@@ -16,7 +16,9 @@ html {
 
 /* tags */
 h1,
-h2 {
+h2,
+h3,
+h4 {
   font-weight: bold;
 }
 
@@ -28,10 +30,26 @@ h2 {
   font-size: 2em;
 }
 
+h3 {
+  font-size: 1.75em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+p {
+  font-family: "PT Serif", serif;
+}
+
+a {
+  color: #333;
+}
+
 /* header */
 .header {
   height: 144px;
-  padding: 0 5%;
+  padding: 0 6.25%;
   background: #fff;
 }
 
@@ -105,12 +123,79 @@ h2 {
   line-height: 1.5em;
 }
 
+/* about */
+#about .icon,
+#about .content {
+  float: left;
+  padding: 32px 6.25%;
+}
+
+#about .icon {
+  min-height: 1px;
+  width: 37.5%;
+  background-color: #CCC;
+}
+
+#about .icon h4 {
+  color: #666;
+  text-align: right;
+}
+
+#about .content {
+  width: 62.5%;
+}
+
+#about .content h3 {
+  margin-bottom: 16px;
+}
+
+#about .content p {
+  line-height: 1.25em;
+}
+
+/* services */
+#services .content,
+#services .gallery,
+#services .info {
+  float: left;
+  padding: 32px 6.25%;
+}
+
+#services .content {
+  width: 37.5%;
+}
+
+#services .content h3,
+#services .content p {
+  margin-bottom: 16px;
+}
+
+#services .content ul {
+  padding: 0 16px;
+  list-style: initial;
+  list-style-position: inside;
+}
+
+#services .content ul li {
+  color: #666;
+  font-style: italic;
+}
+
+#services .gallery {
+  width: 31.25%;
+  background-color: #CCC;
+}
+
+#services .info {
+  width: 31.25%;
+  background-color: #DF4949;
+}
+
 /* buttons */
 .btn {
   display: inline-block;
   padding: 16px;
   color: #fff;
-  font-weight: lighter;
   text-transform: uppercase;
   background-color: #DF4949;
   border: 1px solid #C44040;
