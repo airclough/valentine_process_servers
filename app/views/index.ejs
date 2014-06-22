@@ -14,7 +14,7 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
-    <div class="header clearfix">
+    <div id="header" class="clearfix">
       <div class="brand">
         <div>Valentine</div>
         <div>Process</div>
@@ -29,7 +29,7 @@
         </ul>
       </div>
     </div>
-    <section class="jumbotron">
+    <section id="jumbotron">
       <div class="lead">
         <h2>You Got Served Sucka</h2>
         <p>Valentine Process Servers Inc. specializes in affordable legal process services and investigations. We are conveniently located in Rockland County, NY and can accommodate your legal needs in any court or administrative agency in New York.</p>
@@ -46,7 +46,7 @@
       </div>
       <div class="clearfix">
         <div class="icon">
-          <h4>Experienced</h4>
+          <h4><span class="icon-checkmark"></span>Experienced</h4>
         </div>
         <div class="content">
           <p>Our staff includes individuals who are carefully selected based on their experience and knowledge in the areas of legal process. Paul and Billy Valentine, the co-owners of Valentine Process Servers Inc., are experienced New York and New Jersey litigators who have been servicing individuals and businesses in the community for the past several years.</p>
@@ -54,7 +54,7 @@
       </div>
       <div class="clearfix">
         <div class="icon">
-          <h4>State-of-the-art Technology</h4>
+          <h4><span class="icon-screen"></span>State-of-the-art Technology</h4>
         </div>
         <div class="content">
           <p>We are supported by a state-of-the-art computer program that provides instant status information and accesses to client jobs via the Internet. Our in-house notaries are certified in New York State.</p>
@@ -100,8 +100,17 @@
       <p>78 Pearce Parkway</p>
       <p>Pearl River, NY 10965</p>
     </section>
-    <footer>
+    <footer id="footer">
       <div>developed by <a href="https://github.com/juniorSE7EN">Robby Fairclough</a></div>
     </footer>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/viewport.js"></script>
+    <script src="js/about.js"></script>
+    <script>
+      $( window ).on( 'load', function() {
+        app.init();
+      });
+    </script>
   </body>
 </html>
