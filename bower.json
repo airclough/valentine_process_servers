@@ -1,0 +1,9 @@
+{
+  "name": "Valentine_Process_Servers",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.8.2",
+    "normalize.css": "~3.0.1"
+  }
+}
