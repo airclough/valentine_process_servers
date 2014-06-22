@@ -43,14 +43,14 @@ p {
 }
 
 a {
-  color: #333;
+  color: #DF4949;
 }
 
 /* header */
 .header {
   height: 144px;
   padding: 0 6.25%;
-  background: #fff;
+  background: #FFF;
 }
 
 .header .brand {
@@ -84,7 +84,7 @@ a {
   position: relative;
   height: 400px;
   width: 100%;
-  padding: 0 20%;
+  padding: 0 25%;
   background-color: rgba(51,77,92,0.9);
 }
 
@@ -133,7 +133,7 @@ a {
 #about .icon {
   min-height: 1px;
   width: 37.5%;
-  background-color: #CCC;
+  background-color: #E5E5E5;
 }
 
 #about .icon h4 {
@@ -181,14 +181,68 @@ a {
   font-style: italic;
 }
 
-#services .gallery {
-  width: 31.25%;
-  background-color: #CCC;
+#services .info {
+  width: 62.5%;
+  background-color: #E5E5E5;
 }
 
-#services .info {
-  width: 31.25%;
-  background-color: #DF4949;
+/* coverage */
+#coverage {
+  height: 400px;
+  background-color: #334D5C;
+}
+
+#coverage .content {
+  width: 37.5%;
+  float: right;
+  padding: 32px 6.25%;
+  color: #FFF;
+}
+
+#coverage .content h3 {
+  margin-bottom: 16px;
+}
+
+#coverage .content ul {
+  padding: 0 16px;
+  list-style: initial;
+  list-style-position: inside;
+}
+
+/* contact */
+#contact {
+  padding: 32px 0;
+  text-align: center;
+}
+
+#contact h3,
+#contact p {
+  color: #666;
+}
+
+#contact h2 {
+  text-transform: uppercase;
+}
+
+#contact h2 {
+  margin: 8px 0;
+}
+
+#contact p span {
+  font-weight: bold;
+}
+
+/* footer */
+footer {
+  background: #E5E5E5;
+}
+
+footer div {
+  padding: 8px 6.25%;
+  color: #666;
+  font-size: .5em;
+  text-align: right;
+  text-transform: uppercase;
 }
 
 /* buttons */
