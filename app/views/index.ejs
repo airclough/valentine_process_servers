@@ -31,8 +31,9 @@
     </div>
     <section id="jumbotron">
       <div class="lead">
-        <h2>You Got Served Sucka</h2>
+        <h2>We Look Forward to Serving You</h2>
         <p>Valentine Process Servers Inc. specializes in affordable legal process services and investigations. We are conveniently located in Rockland County, NY and can accommodate your legal needs in any court or administrative agency in New York.</p>
+        <p>At Valentine, we are focused on providing you with the personalized attention you need and deserve!</p>
         <a href="#about"><span class="btn">learn more</span></a>
       </div>
     </section>
@@ -41,6 +42,7 @@
         <div class="icon"></div>
         <div class="content">
           <h3>About Us</h3>
+          <p>Valentine Process Servers has been recognized by our many clients for our innovative techniques as well as speedy turnaround time. Our staff is comprised of practicing attorneys and active/retired law enforcement personnel making us uniquely qualified to handle your legal support services.</p>
           <p>When searching for a process server for your legal documents, we are here for you. Our speed and accuracy ensure that your papers will reach their destination in a timely manner.</p>
         </div>
       </div>
@@ -66,14 +68,36 @@
         <h3>Services We Offer</h3>
         <p>Are you looking for other legal services in addition to service of process? Our experienced staff can support your legal needs through a variety of additional services.</p>
         <ul>
-          <li>Legal Process Service</li>
-          <li>Court filings</li>
-          <li>Document Retrieval</li>
-          <li>Records Searches</li>
-          <li>E-Filing</li>
+          <li class="active" data-service="legal-process-service">Legal Process Service</li>
+          <li data-service="court-filings">Court Filings</li>
+          <li data-service="document-retrieval">Document Retrieval</li>
+          <li data-service="records-searches">Records Searches</li>
+          <li data-service="e-filing">E-Filing</li>
         </ul>
       </div>
-      <div class="info"></div>
+      <div class="info">
+        <ul>
+          <li class="service active" data-service="legal-process-service">
+            <h4>Legal Process Service</h4>
+            <p>Valentine provides fast, reliable, and effective service of process that is carried out by experienced process servers. Same Day and Rush Service Available.</p>
+          </li>
+          <li class="service" data-service="court-filings">
+            <h4>Court Filings</h4>
+            <p>We can also file your papers in any court or administrative agency in New York, including the filing counties; Rockland, Westchester, Orange Putnam, Dutchess, Bronx, New York and Kings.</p>
+          </li>
+          <li class="service" data-service="document-retrieval">
+            <h4>Document Retrieval</h4>
+            <p>Valentine can retrieve documents from any court in New York at your request. We will find it for you and get it to you as quickly as possible.</p>
+          </li>
+          <li class="service" data-service="records-searches">
+            <h4>Records Searches</h4>
+            <p>We can provide litigation searches for due diligence, background checks, and research. Additionally, we can perform personal/onsite record searches at all state and federal courts and administrative agencies.</p>
+          </li>
+          <li class="service" data-service="e-filing">
+            <h4>E-Filing</h4>
+          </li>
+        </ul>
+      </div>
     </section>
     <section id="coverage">
       <div class="map"></div>
@@ -94,7 +118,7 @@
       </div>
     </section>
     <section id="contact">
-      <h3>914.250.1266</h3>
+      <h3>914.260.1266</h3>
       <h2>info@valentineprocessservers.com</h2>
       <p><span>Valentine Process Servers Inc.</span></p>
       <p>78 Pearce Parkway</p>
@@ -107,6 +131,7 @@
     <script src="js/app.js"></script>
     <script src="js/viewport.js"></script>
     <script src="js/about.js"></script>
+    <script src="js/services.js"></script>
     <script>
       $( window ).on( 'load', function() {
         app.init();
