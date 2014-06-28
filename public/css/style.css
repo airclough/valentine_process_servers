@@ -80,6 +80,10 @@ a {
   margin-left: 0;
 }
 
+#header .nav ul li a {
+  text-decoration: none;
+}
+
 /* jumbotron */
 #jumbotron {
   position: relative;
