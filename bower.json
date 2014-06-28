@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "d3": "~3.4.8",
     "modernizr": "~2.8.2",
     "normalize.css": "~3.0.1",
     "jquery": "~2.1.1"
