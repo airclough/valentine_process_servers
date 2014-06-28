@@ -252,15 +252,25 @@ a {
 
 /* coverage */
 #coverage {
+  position: relative;
   height: 400px;
   background-color: #334D5C;
 }
 
+#coverage .map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
 #coverage .content {
+  position: relative;
   width: 37.5%;
   float: right;
   padding: 32px 6.25%;
   color: #FFF;
+  z-index: 1;
 }
 
 #coverage .content h3 {
