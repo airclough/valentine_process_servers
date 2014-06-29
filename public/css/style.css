@@ -11,7 +11,7 @@ html {
   font-size: 16px;
   font-weight: 400;
   line-height: 1em;
-  background-color: #fff;
+  background: #fff;
 }
 
 /* tags */
@@ -49,6 +49,10 @@ li {
 
 a {
   color: #DF4949;
+}
+
+label {
+  display: block;
 }
 
 /* header */
@@ -94,7 +98,7 @@ a {
   height: 400px;
   width: 100%;
   padding: 0 25%;
-  background-color: rgba(51,77,92,0.9);
+  background: rgba(51,77,92,0.9);
 }
 
 #jumbotron::after {
@@ -141,7 +145,7 @@ a {
 #about .icon {
   min-height: 1px;
   width: 37.5%;
-  background-color: #E5E5E5;
+  background: #F2F2F2;
 }
 
 #about .icon h4 {
@@ -227,7 +231,7 @@ a {
 #services .info {
   position: relative;
   width: 62.5%;
-  background-color: #E5E5E5;
+  background: #F2F2F2;
 }
 
 #services .info ul li {
@@ -262,7 +266,7 @@ a {
 #coverage {
   position: relative;
   height: 400px;
-  background-color: #334D5C;
+  background: #334D5C;
 }
 
 #coverage .map {
@@ -315,24 +319,90 @@ a {
 
 /* contact */
 #contact {
-  padding: 32px 0;
-  text-align: center;
+  width: 100%;
+  padding: 32px 6.25%;
 }
 
-#contact h3,
-#contact p {
-  color: #666;
+#contact .contact-form {
+  width: 400px;
+  margin: 0 auto;
 }
 
-#contact h2 {
+#contact .contact-form h3,
+#contact .contact-form p:first-of-type,
+#contact .contact-form form {
+  margin-bottom: 16px;
+}
+
+#contact .contact-form form {
+  padding: 16px;
+  background: #F2F2F2;
+}
+
+#contact .contact-form form p {
+  margin-bottom: 16px;
+  font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#contact .contact-form form p:last-of-type {
+  margin-bottom: 0;
+}
+
+#contact .contact-form form label {
+  color: #999999;
+  font-size: .75em;
   text-transform: uppercase;
 }
 
-#contact h2 {
+#contact .contact-form form input,
+#contact .contact-form form textarea {
+  width: 100%;
+  font-size: 16px;
+}
+
+#contact .contact-form form input {
+  height: 32px;
+  padding: 0 8px;
+  line-height: 32px;
+  border: 1px solid #CCCCCC;
+  outline: none;
+}
+
+#contact .contact-form form textarea {
+  height: 10em;
+  padding: 8px;
+  line-height: 16px;
+  border: 1px solid #CCCCCC;
+  outline: none;
+  resize: none;
+}
+
+#contact .contact-form .required {
+  color: #CCCCCC;
+  font-size: .75em;
+}
+
+/* info */
+#info {
+  padding: 32px 0;
+  text-align: center;
+  background: #F2F2F2;
+}
+
+#info h3,
+#info p {
+  color: #666;
+}
+
+#info h2 {
+  text-transform: uppercase;
+}
+
+#info h2 {
   margin: 8px 0;
 }
 
-#contact p span {
+#info p span {
   font-weight: bold;
 }
 
@@ -355,13 +425,13 @@ footer div {
   padding: 16px;
   color: #fff;
   text-transform: uppercase;
-  background-color: #DF4949;
+  background: #DF4949;
   border: 1px solid #C44040;
   border-radius: 4px;
 }
 
 .btn:hover {
-  background-color: #D14444;
+  background: #D14444;
   cursor: pointer;
 }
 
