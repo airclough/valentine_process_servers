@@ -12,7 +12,7 @@ window.app.about = ( function( $ ) {
     var that = this;
     $( window ).on( 'scroll', function( e ) {
       if( that.inView( $( this ).scrollTop() ) ) {
-        $( this ).unbind( 'scroll' );
+        $( this ).on( 'scroll', function( e ) { return false; } );
         that._transition();
       }
     });

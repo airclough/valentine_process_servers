@@ -1,4 +1,21 @@
-window.app.coverage = ( function( $ ) {
+window.app.coverage = ( function( $, d3 ) {
+  var countiesMap = {
+    '36087': 'rockland',
+    '36119': 'westchester',
+    '36071': 'orange',
+    '36079': 'putnam',
+    '36027': 'dutchess',
+    '36105': 'sullivan',
+    '36111': 'ulster',
+    '36005': 'bronx nyc',
+    '36061': 'manhattan nyc',
+    '36047': 'brooklyn nyc',
+    '36081': 'queens nyc',
+    '36085': 'statenIsland nyc',
+    '36059': 'longIsland',
+    '36103': 'longIsland'
+  };
+
   var h = 400;
   var w = $( window ).width();
 
@@ -14,15 +31,6 @@ window.app.coverage = ( function( $ ) {
   svg
     .attr( 'height', h )
     .attr( 'width', w );
-
-  var counties = [
-    36087, 36119, 36071, 36079, 36105, 36111, 36027, 36005, 36061, 36047, 36081, 36059, 36103
-  ];
-
-  var countiesMap = {
-    'rockland': 36087,
-    'westchester': 36119
-  };
 
   d3.json( '/js/us.json', function( err, us ) {
     if( err ) return console.log( 'error loading us.json' );
@@ -40,32 +48,74 @@ window.app.coverage = ( function( $ ) {
 
     svg
       .append( 'g' )
+        .attr( 'class', 'counties' )
       .selectAll( 'path' )
         .data( topojson.feature( us, us.objects.counties ).features )
       .enter()
         .append( 'path' )
-          .attr( 'class', function( d ) { return d.id; } )
-          .attr( 'fill', function( d ) { return -1 !== counties.indexOf( d.id ) ? '#DF4949' : 'none' } )
-          .attr( 'stroke', function( d ) { return -1 !== counties.indexOf( d.id ) ? '#F75151' : 'none' } )
+          .attr( 'class', function( d ) { return countiesMap[ d.id ] ? countiesMap[ d.id ] : d.id; } )
+          .attr( 'fill', function( d ) { return undefined !== countiesMap[ d.id ] ? '#DF4949' : 'none'; } )
+          .attr( 'stroke', function( d ) { return undefined !== countiesMap[ d.id ] ? '#F75151' : 'none'; } )
           .attr( 'stroke-width', '1px' )
+          .attr( 'opacity', 0 )
           .attr( 'd', path );
 
     svg
       .append( 'g' )
+        .attr( 'class', 'states' )
       .selectAll( 'path' )
         .data( states.features )
       .enter()
         .append( 'path' )
-          .attr( 'class', function( d ) { if( 36 === d.id ) { console.log( path.centroid( d ) ) }; return d.id; } )
+          .attr( 'class', function( d ) { return d.id; } )
           .attr( 'fill', 'none' )
           .attr( 'stroke', '#4F788F' )
           .attr( 'stroke-width', '1px' )
           .attr( 'd', path );
+
+    initAreas();
   });
 
-  function init() {
-    //
+  var Area = function( li ) {
+    this.$li = $( li );
+
+    this._setCounty();
+  };
+
+  Area.prototype._setCounty = function() {
+    var name = this.$li.data( 'name' );
+
+    this.$county = $( '#coverage .map .' + name );
+  };
+
+  Area.prototype.transition = function() {
+    this.$li.addClass( 'transition' );
+    this.$county.css( 'opacity', 1 );
+  };
+
+  function inView( px ) {
+    return 0 >= app.viewport.getHeight( 'coverage' ) - ( app.viewport.height + px );
   }
 
-  return { init: init };
-})( $ );
+  function initAreas() {
+    var $win = $( window );
+    var $lis = $( '#coverage li' );
+    var areas = [];
+
+    Array.prototype.slice.call( $lis ).forEach( function( el ) {
+      areas.push( new Area( el ) );
+    });
+
+    $win.on( 'scroll', function( e ) {
+      if( inView( $win.scrollTop() ) ) {
+        $win.unbind( 'scroll' );
+        areas.forEach( function( area, i ) {
+          var to = setTimeout( function() {
+            area.transition();
+            clearTimeout( to );
+          }, i * 250 );
+        });
+      }
+    });
+  }
+})( $, d3 );
