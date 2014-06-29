@@ -129,23 +129,23 @@
         <form>
           <p>
             <label for="name">Name*</label>
-            <input type="text" name="name">
+            <input type="text" name="name" id="name">
           </p>
           <p>
             <label for="firm">Firm</label>
-            <input type="text" name="firm">
+            <input type="text" name="firm" id="firm">
           </p>
           <p>
             <label for="msg">Message*</label>
-            <textarea name="msg"></textarea>
+            <textarea name="msg" id="msg"></textarea>
           </p>
           <p>
             <label for="firm">Email*</label>
-            <input type="text" name="email">
+            <input type="text" name="email" id="email">
           </p>
           <p>
             <label for="firm">Phone</label>
-            <input type="tel" name="phone" maxlength="10">
+            <input type="tel" name="phone" id="phone" maxlength="10">
           </p>
           <p>
             <div class="submit btn">submit</div>
@@ -172,6 +172,7 @@
     <script src="js/about.js"></script>
     <script src="js/services.js"></script>
     <script src="js/coverage.js"></script>
+    <script src="js/contact.js"></script>
     <script>
       $( window ).on( 'load', function() {
         app.init();

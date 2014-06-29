@@ -364,8 +364,17 @@ label {
   height: 32px;
   padding: 0 8px;
   line-height: 32px;
+  color: #333333;
   border: 1px solid #CCCCCC;
   outline: none;
+
+  -webkit-transition: border .5s;
+     -moz-transition: border .5s;
+          transition: border .5s;
+}
+
+#contact .contact-form form input.error {
+  border: 1px solid #DF4949;
 }
 
 #contact .contact-form form textarea {
@@ -375,6 +384,34 @@ label {
   border: 1px solid #CCCCCC;
   outline: none;
   resize: none;
+
+  -webkit-transition: border .5s;
+     -moz-transition: border .5s;
+          transition: border .5s;
+}
+
+#contact .contact-form form textarea.error {
+  border: 1px solid #DF4949;
+}
+
+#contact .contact-form form .submit {
+  -webkit-transition: opacity .5s;
+     -moz-transition: opacity .5s;
+          transition: opacity .5s;
+}
+
+#contact .contact-form form .submit.faded {
+  opacity: .5;
+}
+
+#contact .contact-form form .submit span {
+  display: inline-block;
+}
+
+#contact .contact-form form .submit span.rotate {
+  -webkit-animation: rotate 2s linear 0s infinite;
+     -moz-animation: rotate 2s linear 0s infinite;
+          animation: rotate 2s linear 0s infinite;
 }
 
 #contact .contact-form .required {
@@ -435,6 +472,12 @@ footer div {
   cursor: pointer;
 }
 
+/* animations */
+
+@-webkit-keyframes rotate { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg) }  }
+   @-moz-keyframes rotate { from { -moz-transform: rotate(0deg); } to { -moz-transform: rotate(360deg) }  }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg) }  }
+
 /* icons */
 @font-face {
   font-family: 'icomoon';
@@ -461,9 +504,9 @@ footer div {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-screen:before {
-  content: "\e652";
+.icon-spinner:before {
+  content: "\e600";
 }
 .icon-checkmark:before {
-  content: "\e6fe";
+  content: "\e601";
 }
