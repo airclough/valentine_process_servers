@@ -419,6 +419,11 @@ label {
   font-size: .75em;
 }
 
+#contact .contact-form span.error {
+  padding: 0 16px;
+  color: #DF4949;
+}
+
 /* info */
 #info {
   padding: 32px 0;
@@ -452,8 +457,23 @@ footer div {
   padding: 8px 6.25%;
   color: #666;
   font-size: .5em;
-  text-align: right;
   text-transform: uppercase;
+}
+
+footer .copy {
+  float: left;
+}
+
+footer .copy span {
+  font-weight: 700;
+}
+
+footer .dev {
+  float: right;
+}
+
+footer .dev a {
+  font-weight: 700;
 }
 
 /* buttons */

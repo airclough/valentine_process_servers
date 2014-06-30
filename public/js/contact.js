@@ -1,6 +1,7 @@
 window.app.contact = ( function( $ ) {
-  var contactForm = {
+  var contact = {
     init: function() {
+      this.$el = $( '#contact .contact-form' );
       this.$form = $( '#contact form' );
       this.$submit = $( '#contact form .submit' );
 
@@ -44,11 +45,13 @@ window.app.contact = ( function( $ ) {
         });
 
         req.done( function( data ) {
-          that._renderThanks( data );
+          data.error
+            ? that._displayError()
+            : that._renderThanks( data );
         });
 
         req.fail( function( jqXHR, textStatus ) {
-          console.log( textStatus );
+          that._displayError();
         });
 
         req.always( function() {
@@ -71,36 +74,44 @@ window.app.contact = ( function( $ ) {
           case '$name':
           case '$msg':
             if( emptyString.test( this.formSelectors[ prop ].val() ) ) {
-              this._displayError( prop, true );
+              this._validationError( prop, true );
               return false;
             }
             break;
           case '$email':
             if( !email.test( this.formSelectors[ prop ].val() ) ) {
-              this._displayError( prop, true );
+              this._validationError( prop, true );
               return false;
             }
             break;
         }
 
-        this._displayError( prop, false );
+        this._validationError( prop, false );
         this.formData[ this.formSelectors[ prop ].attr( 'name' ) ] = this.formSelectors[ prop ].val();
       }
 
       return true;
     },
 
-    _displayError: function( el, bool ) {
+    _validationError: function( el, bool ) {
       this.formSelectors[ el ].toggleClass( 'error', bool );
     },
 
+    _displayError: function() {
+      this.$form.append( '<span class="error">There was an error sending your message.</span>' )
+    },
+
     _renderThanks: function( data ) {
-      console.log( data );
+      var html = ''
+        + '<h3>Thank You, ' + data.name.split( ' ' )[ 0 ] + '</h3>'
+        + '<p>We will be in touch.</p>';
+
+      this.$el.html( html );
     }
   };
 
   function init() {
-    contactForm.init();
+    contact.init();
   }
 
   return { init: init };
