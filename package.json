@@ -14,7 +14,7 @@
     "type": "git",
     "url": "https://github.com/juniorSE7EN/valentine_process_servers"
   },
-  "homepage": "",
+  "homepage": "http://valentineprocessservers.com",
   "private": true,
   "engines": {
     "node": "0.10.x",
